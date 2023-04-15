@@ -1,6 +1,6 @@
 import { Ingredient } from "~/models";
-import { z } from "zod";
 import { Show } from "solid-js";
+import { z } from "zod";
 
 export default function IngredientListItem(props: { ingredient: z.infer<typeof Ingredient> }) {
   return (

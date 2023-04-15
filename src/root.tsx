@@ -12,29 +12,27 @@ import {
   Title,
 } from "solid-start";
 import Navbar from "./components/Navbar";
-import "./root.scss";
+import "./root.css";
 
 export default function Root() {
   return (
     <Html lang="en">
       <Head>
-        <Title>Sam Mohr - Home</Title>
+        <Title>Sam Mohr</Title>
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Body>
         <Suspense>
           <ErrorBoundary>
-            <main class="container">
-              <Navbar />
-              <Routes>
-                <FileRoutes />
-              </Routes>
-            </main>
+            <Navbar />
+            <Routes>
+              <FileRoutes />
+            </Routes>
           </ErrorBoundary>
         </Suspense>
         <Scripts />
       </Body>
-    </Html>
+    </Html >
   );
 }

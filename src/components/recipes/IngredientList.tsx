@@ -5,7 +5,7 @@ import IngredientListItem from "./IngredientListItem";
 
 export default function IngredientList(props: { ingredients: z.infer<typeof Ingredients> }) {
   const ingredients = props.ingredients;
-  
+
   return ingredients instanceof Map ? (
     <For each={[...ingredients.entries()]}>
       {([group, ingredients]) => (

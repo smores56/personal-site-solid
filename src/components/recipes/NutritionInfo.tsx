@@ -1,12 +1,12 @@
-import { Show } from "solid-js";
 import { z } from "zod";
+import { Show } from "solid-js";
 import { Nutrition } from "~/models";
 
 export default function NutritionInfo(props: { nutrition: z.infer<typeof Nutrition> }) {
   return (
-    <>
+    <div class="overflow-x-auto">
       <h4>Nutrition:</h4>
-      <table style:line-height={0.5}>
+      <table class="table w-full">
         <tbody>
           <Show when={props.nutrition.servings} keyed>
             {servings => (
@@ -74,6 +74,6 @@ export default function NutritionInfo(props: { nutrition: z.infer<typeof Nutriti
           </Show>
         </tbody>
       </table>
-    </>
+    </div>
   );
 }

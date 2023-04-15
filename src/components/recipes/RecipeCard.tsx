@@ -1,12 +1,14 @@
 import { For, Show } from "solid-js"
 import { Recipe } from "~/models";
 import { z } from "zod";
-import TagList from "../TagList";
-import IngredientList from "./IngredientList";
-import NutritionInfo from "./NutritionInfo";
+
+import TagList from "~/components/recipes/TagList";
+import IngredientList from "~/components/recipes/IngredientList";
+import NutritionInfo from "~/components/recipes/NutritionInfo";
 
 interface RecipeCardProps {
   recipe: z.infer<typeof Recipe>;
+  recipeIndex: number;
   selectedTags: string[];
   toggleTag: (tag: string) => void;
   expanded: boolean;
@@ -14,35 +16,29 @@ interface RecipeCardProps {
 }
 
 export default function RecipeCard(props: RecipeCardProps) {
+  // <div class="accordion" classList={{active: props.expanded}}>
   return (
-    <details open={props.expanded}>
-      <summary>
-        {props.recipe.name}
-        
-        <span style={{"padding-left": "10px"}}>
-          <TagList
-            rightAlign={true}
-            tags={props.recipe.tags}
-            selected={props.selectedTags}
-            toggle={props.toggleTag}
-          />
+    <div class="collapse border-2 border-primary border-b-0 first:rounded-t-lg last:rounded-b-lg last:border-b-2">
+      <input type="checkbox" />
+      <div class="collapse-title text-xl w-full font-medium flex content-between">
+        <span>
+          {props.recipe.name}
         </span>
-      </summary>
 
-      <div class="panel-body align-left">
-        <Show when={props.recipe.image} keyed>
-          {(image) => (
-            <section class="recipe-image">
-              <img src={image} alt="preview of the dish" />
-            </section>
-          )}
-        </Show>
+        <TagList
+          rightAlign={true}
+          tags={props.recipe.tags}
+          selected={props.selectedTags}
+          toggleTag={props.toggleTag}
+        />
+      </div>
 
+      <div class="collapse-content prose">
         <h4>Ingredients:</h4>
         <IngredientList ingredients={props.recipe.ingredients} />
 
         <h4>Steps:</h4>
-        <ol>
+        <ol class="list-decimal">
           <For each={props.recipe.steps || []}>
             {step => <li>{step}</li>}
           </For>
@@ -54,7 +50,7 @@ export default function RecipeCard(props: RecipeCardProps) {
 
         <Show when={props.recipe.links?.length}>
           <h4>Links:</h4>
-          <ul>
+          <ul class="list-disc">
             <For each={props.recipe.links || []}>
               {link => <li>
                 <a href={link}>{link}</a>
@@ -63,6 +59,6 @@ export default function RecipeCard(props: RecipeCardProps) {
           </ul>
         </Show>
       </div>
-    </details>
+    </div>
   );
 }
