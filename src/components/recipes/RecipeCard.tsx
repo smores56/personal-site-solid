@@ -20,13 +20,12 @@ export default function RecipeCard(props: RecipeCardProps) {
   return (
     <div class="collapse border-2 border-primary border-b-0 first:rounded-t-lg last:rounded-b-lg last:border-b-2">
       <input type="checkbox" />
-      <div class="collapse-title text-xl w-full font-medium flex content-between">
-        <span>
+      <div class="collapse-title text-xl w-full font-medium flex content-between pr-2">
+        <div class="flex-1">
           {props.recipe.name}
-        </span>
+        </div>
 
         <TagList
-          rightAlign={true}
           tags={props.recipe.tags}
           selected={props.selectedTags}
           toggleTag={props.toggleTag}
@@ -44,10 +43,6 @@ export default function RecipeCard(props: RecipeCardProps) {
           </For>
         </ol>
 
-        <Show when={props.recipe.nutrition} keyed>
-          {nutrition => <NutritionInfo nutrition={nutrition} />}
-        </Show>
-
         <Show when={props.recipe.links?.length}>
           <h4>Links:</h4>
           <ul class="list-disc">
@@ -57,6 +52,10 @@ export default function RecipeCard(props: RecipeCardProps) {
               </li>}
             </For>
           </ul>
+        </Show>
+
+        <Show when={props.recipe.nutrition} keyed>
+          {nutrition => <NutritionInfo nutrition={nutrition} />}
         </Show>
       </div>
     </div>

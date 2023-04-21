@@ -11,7 +11,10 @@ export default function KeyboardCard(props: { keyboard: Keyboard }) {
       <div class="card-body lg:basis-1/3">
         <h1 class="card-title">{props.keyboard.name}</h1>
 
-        <p>{props.keyboard.description}</p>
+        <p class="mb-2">
+          {props.keyboard.description}
+        </p>
+
         <div class="card-actions justify-end">
           <ExternalLink
             href={props.keyboard.link}

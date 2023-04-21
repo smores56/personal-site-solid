@@ -53,8 +53,8 @@ export default function Recipes() {
           Between a book full of family recipes and my ever-growing rotation
           of Keto-friendly recipes, I needed somewhere to keep these that I
           could access from anywhere. With the power of YAML files and
-          GraphQL, I can now check the ingredients on my phone at Trader Joe's
-          before I check out, and you can, too!
+          my home server, I can now check the ingredients on my phone at
+          Trader Joe's before I check out, and you can, too!
         </p>
 
         <FilterRecipes
@@ -133,7 +133,7 @@ function LoadedRecipes(props: LoadedRecipesProps) {
 
 function NoRecipes(props: { queryFilled: boolean }) {
   return (
-    <p>
+    <p class="text-center">
       <i>
         <Show when={props.queryFilled} fallback={"No recipes available."}>
           No recipes found for the given query.

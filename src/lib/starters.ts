@@ -9,7 +9,7 @@ export const randomPuzzle = () => {
     const value = parseInt(starter[index]);
     const prefilled = starter[index + 1] === "t";
 
-    squares.push({ expected: value, current: { type: prefilled ? "pre-filled" : "empty" }, notes: [] });
+    squares.push({ expected: value, current: { type: prefilled ? "pre-filled" : "empty" } });
   }
 
   return squares;

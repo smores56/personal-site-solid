@@ -25,10 +25,10 @@ export default function SudokuSquare(props: SudokuSquareProps) {
       ? "bg-neutral"
       : visiblyWrong()
         ? isSelected()
-          ? "bg-warning"
+          ? "bg-secondary"
           : "bg-error"
         : isSelected()
-          ? "bg-neutral"
+          ? "bg-base-200"
           : undefined
   );
 
@@ -36,9 +36,9 @@ export default function SudokuSquare(props: SudokuSquareProps) {
     <div
       onclick={() => props.clickSquare(props.coords)}
       class={
-        `flex-1 font-bold text-6xl text-center align-middle border-x
-         [&>*:nth-child(4)]:border-l-2 [&>*:nth-child(7)]:border-l-2
-         [&>*:nth-child(3)]:border-r-2 [&>*:nth-child(6)]:border-r-2
+        `flex-1 font-bold text-5xl text-center align-middle border-x border-primary
+         [&:nth-child(4)]:border-l-2 [&:nth-child(7)]:border-l-2
+         [&:nth-child(3)]:border-r-2 [&:nth-child(6)]:border-r-2
          first:border-l-4 last:border-r-4 ${backgroundColor()}`
       }
     >

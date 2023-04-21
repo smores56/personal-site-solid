@@ -28,11 +28,13 @@ export default function FilterRecipe(props: FilterRecipeProps) {
         <label class="label">
           <span class="label-text w-full">Filter By Tag</span>
         </label>
-        <TagList
-          tags={props.allTags}
-          selected={props.params.tags}
-          toggleTag={props.toggleTag}
-        />
+        <div>
+          <TagList
+            tags={props.allTags}
+            selected={props.params.tags}
+            toggleTag={props.toggleTag}
+          />
+        </div>
       </div>
     </fieldset>
   );

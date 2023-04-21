@@ -18,7 +18,7 @@ export default function IngredientList(props: { ingredients: z.infer<typeof Ingr
       )}
     </For>
   ) : (
-    <ul>
+    <ul class="list-disc">
       <For each={ingredients}>
         {ingredient => <IngredientListItem ingredient={ingredient} />}
       </For>

@@ -4,24 +4,6 @@ import { Coordinates, SudokuSquareState } from "~/models";
 
 import SudokuSquare from "~/components/sudoku/SudokuSquare";
 
-// .sudoku-row:nth-child(4),
-//   .sudoku-row:nth-child(7) {
-//   border-top: 2px solid black;
-// }
-
-// .sudoku-row:nth-child(3),
-//   .sudoku-row:nth-child(6) {
-//   border-bottom: 2px solid black;
-// }
-
-// .sudoku-row:nth-child(1) {
-//   border-top: 4px solid black;
-// }
-
-// .sudoku-row:nth-child(9) {
-//   border-bottom: 4px solid black;
-// }
-
 export interface SudokuBoardProps {
   squares: SudokuSquareState[];
   selected: Coordinates | null;
@@ -42,7 +24,9 @@ export default function SudokuBoard(props: SudokuBoardProps) {
         {row => (
           <div
             class="flex flex-row justify-around border-t border-b
-                   first:border-t-4 last:border-b-4"
+                   first:border-t-4 last:border-b-4 border-primary
+                   [&:nth-child(4)]:border-t-2 [&:nth-child(7)]:border-t-2
+                   [&:nth-child(3)]:border-b-2 [&:nth-child(6)]:border-b-2"
           >
             <For each={row}>
               {sq => (
