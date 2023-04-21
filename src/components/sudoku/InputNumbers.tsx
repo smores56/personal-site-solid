@@ -1,4 +1,5 @@
-import { For } from "solid-js";
+import { For, ParentProps } from "solid-js";
+import EraseIcon from "../icons/EraseIcon";
 
 export interface InputNumbersProps {
   clickNumber: (num: number) => void;
@@ -12,9 +13,15 @@ export default function InputNumbers(props: InputNumbersProps) {
     <div class="sudoku-board">
       <div class="flex flex-row place-content-around">
         <For each={oneToNine}>
-          {num => <InputSquare text={`${num}`} onclick={() => props.clickNumber(num)} />}
+          {num => (
+            <InputSquare onclick={() => props.clickNumber(num)}>
+              {num}
+            </InputSquare>
+          )}
         </For>
-        <InputSquare text="⌫" onclick={props.clearSquare} />
+        <InputSquare onclick={props.clearSquare}>
+          <EraseIcon />
+        </InputSquare>
       </div>
     </div>
   );
@@ -22,17 +29,16 @@ export default function InputNumbers(props: InputNumbersProps) {
 
 interface InputSquareProps {
   onclick: () => void;
-  text: string;
 }
 
-function InputSquare(props: InputSquareProps) {
+function InputSquare(props: ParentProps<InputSquareProps>) {
   return (
     <div
       onclick={props.onclick}
       class="flex-1 font-bold text-center align-middle border-2 border-t-4 border-b-4
-             first:border-l-4 last:border-r-4 text-5xl"
+             first:border-l-4 last:border-r-4 text-5xl border-primary"
     >
-      <b>{props.text}</b>
+      <b>{props.children}</b>
     </div>
   )
 }

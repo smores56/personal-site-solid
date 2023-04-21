@@ -8,63 +8,72 @@ import clogV3Url from "~/images/keyboard-pics/clog-v3.jpg";
 
 import { Keyboard } from "./models";
 
-export const EMAIL = "sam@sammohr.dev";
-export const REVIEWS_DIR = "/home/smores/pCloudDrive/reviews";
-export const RECIPES_DIR = "/home/smores/pCloudDrive/recipes";
 export const PAGE_SIZE = 20;
+export const EMAIL = "sam@sammohr.dev";
+export const RECIPES_DIR = "/home/smores/pCloudDrive/recipes";
 export const CLOG_V2_README_URL = "https://github.com/smores56/clog-v2";
-
-const DEFAULT_DESCRIPTION = Array(3).fill(0).map(() => "lorem ipsum lorem ipsum lorem ipsum lorem ipsum.").join(" ");
 
 export const ALL_KEYBOARDS: Keyboard[] = [
   {
     name: "The Osprette",
     link: "https://github.com/smores56/osprette",
     imageUrl: ospretteUrl,
-    description: DEFAULT_DESCRIPTION
-    // description: "My first foray into the pinky cluster jungle.
-    //  With 2 thumb keys on each side, strong pinky stagger, and a comfortable 50 degree angle between the halves, this has all of the cool features of a state-of-the-art unibody ergo keeb. But the big difference that puts this bird on the fringe are the migrated keys on its fringes: the outer top pinky keys are now on the \"sixth\" column.\n\nBut why, you ask? Why send them to the corner for timeout? I unfortunately find that no matter how low I put the pinky columns, I can never quite access those keys without my whole arm moving (at least) a little, which is not the case for any of the other keys on most 34-key boards. Taking inspiration from Brow's Balbuzard, the movement of these keys to the outsides of the pinky columns keeps every key within a comfortable reach.\n\nThe one (arguable) weakness of this approach is that the bigrams (read: subsequent keys) from Q to W and O to P on QWERTY-based layouts will be more awkward than you're used to, but I think it's worth the trade-off."
+    description: "My first foray into the pinky cluster jungle, a magnum opus I can still be proud of \
+                  from the aesthetic alone. I've since moved on to other keyboard pastures as all cowboys do, \
+                  but this holds a proud spot in my heart as a personal project that made it to about a dozen \
+                  countries when I sold and shipped to any daring enough to try it."
   },
   {
     name: "The Clog V3",
     link: "https://github.com/smores56/clog-v3",
     imageUrl: clogV3Url,
-    description: DEFAULT_DESCRIPTION
+    description: "New and improved, and streamlined, the Clog V3 is. All components on the bottom. LDSA keycaps and \
+                  choc sunset switches. Asymplex thumb keycaps. Heated seats and convertible roof. This is my \
+                  mainstay at work because it makes no compromises, except for a bit of extra setup time."
   },
   {
     name: "The Clog V2",
     link: "https://github.com/smores56/clog-v2",
     imageUrl: clogV2Url,
-    description: DEFAULT_DESCRIPTION
+    description: "A board that works surprisingly well for all the iterations I made from the prior gen. Besides the \
+                  newly released pink PCB's, I also used new controllers and brought back the horizontal encoders all \
+                  in one go. Changing so much at once was nerve-wracking, but a Discord server of nerds gave me all \
+                  the scrutiny I needed to get it right the first time, free of charge."
   },
-  // {
-  //   name: "The Osprette V2",
-  //   link: "https://github.com/smores56/osprette-v2",
-  //   imageUrl: ospretteV2Url,
-  //   description: DEFAULT_DESCRIPTION
-  // },
   {
     name: "The Clog",
     link: "https://github.com/smores56/clog",
     imageUrl: clogUrl,
-    description: "For the split fiends! For the dreamers! For the wooden-shoe'd! The Clog is the split version of the Osprette, with the same choc-spacing and overall layout, including the number of keys (34) and the pinky cluster. The one minor difference is the 1.5u thumb key, 'cause it fits and it looks great. You can now sew a half to each pant pocket, or just put bumpons on and have good shoulder posture without stabbing yourself in the process."
+    description: "\"To show you the power of pinky clusters, I sawed this keyboard in half!\" And also it looks \
+                  like a shoe, huh. So yeah, the clog can be soldered together in half an hour or less and will \
+                  last for years because it's simple and just works (tm). I'd recommend newer iterations at this point, \
+                  though, so you can benefit from my greater design experience."
   },
   {
     name: "The Osprette MX",
     link: "https://github.com/smores56/osprette-mx",
     imageUrl: ospretteMxUrl,
-    description: "Following in the footsteps of the original Osprette, this 34-key board feels just as comfortable to use, while letting you put your favorite MX switches to good use. Especially here with the slightly-larger-than-choc MX spacing does moving the top pinky keys to the side make typing more comfortable. You can check out the description for the original Osprette to read more about the pinky cluster schtick."
+    description: "When you're on the run and wanna grab-and-go, or don't want to set up tripods every time, \
+                  the Osprette MX is a wonderfully comfortable package that gets months of battery life. \
+                  This is the closest I've come to a perfect board from a design and ergonomics perspective, \
+                  and it wins the most used award across all of my designs."
   },
   {
     name: "The Sephirette",
     link: "https://github.com/smores56/sephirette",
     imageUrl: sephiretteUrl,
-    description: "The Sephirette takes the Osprette MX and clefts it in twain! No really, it's the same spacing and all. But with a twist: this is the first S'mores Boards stacked plate case! With FR4 switch plates and bottom plates, you can maintain a relatively low profile and get the protection and weight of a case. The art from Perce is based on my love of all things Final Fantasy and the one-winged nature of this split bird board."
+    description: "The splitting image of the Osprette MX is my weapon of choice when clacking up a \
+                  storm at home. The board earns the name of the fan favorite villain by looking good \
+                  but feeling better. I haven't used the stacked case design since, but I highly recommend \
+                  it if you want an inexpensive build that feels expensive.",
   },
   {
     name: "The Fun Size",
     link: "https://github.com/smores56/fun-size",
     imageUrl: funSizeUrl,
-    description: DEFAULT_DESCRIPTION
+    description: "My first finished design. For an early evolution from the primordial design ooze, \
+                  I still think it would be a great board to daily if you don't wanna go full pinky \
+                  cluster (yet). Maybe if enough people bug me for non-cluster boards like this one I'll \
+                  design another, but what can I say, I know what I like."
   }
 ]

@@ -1,6 +1,6 @@
 import { randomPuzzle } from "~/lib/starters";
 import { mapSquareAtCoords, coordsAreEqual, emptyBoard } from "~/utils";
-import { Show, createEffect, createMemo, createSignal, onCleanup } from "solid-js";
+import { createEffect, createMemo, createSignal, onCleanup } from "solid-js";
 
 import type {
   SudokuSquareState,
@@ -13,10 +13,10 @@ import InputNumbers from "~/components/sudoku/InputNumbers";
 import SudokuBoard from "~/components/sudoku/SudokuBoard";
 
 export default function SudokuGame() {
-  const [squares, setSquares] = createSignal<SudokuSquareState[] | null>(null);
+  const [squares, setSquares] = createSignal<SudokuSquareState[] | null>(randomPuzzle());
   const [selected, setSelected] = createSignal<Coordinates | null>(null);
   const [showMistakes, setShowMistakes] = createSignal(false);
-  const [timing, setTiming] = createSignal<Timing>({ started: null, finished: null });
+  const [timing, setTiming] = createSignal<Timing>({ started: new Date(), finished: null });
   const [now, setNow] = createSignal(new Date());
 
   createEffect(() => {
@@ -115,32 +115,30 @@ export default function SudokuGame() {
   }
 
   return (
-    <div class="container mx-auto max-w-xl px-2 pt-2">
+    <div class="container mx-auto max-w-lg px-2 pt-2">
       <div>
-        <Show when={squares()}>
-          <SudokuBoard
-            squares={squares()!}
-            selected={selected()}
-            showMistakes={showMistakes()}
-            clickSquare={clickSquare}
-          />
-          <br />
-        </Show>
+        <SudokuBoard
+          squares={squares() || emptyBoard}
+          selected={selected()}
+          showMistakes={showMistakes()}
+          clickSquare={clickSquare}
+        />
+        <br />
         <InputNumbers clickNumber={inputNumber} clearSquare={clearSquare} />
       </div>
       <div class="flex flex-row justify-evenly w-full p-6">
         <div class="align-center basis-4/12 space-between h-full flex flex-col">
-          <p class="text-center text-4xl" classList={{ "text-success": !!timing().finished }}>
+          <p class="text-center text-5xl" classList={{ "text-success": !!timing().finished }}>
             {elapsedTime()}
           </p>
-          <div class="form-control">
+          <div class="form-control py-4">
             <label class="label cursor-pointer">
               <span class="label-text">Show Mistakes</span>
               <input
                 type="checkbox"
                 class="toggle"
-                oninput={() => setShowMistakes(sm => !sm)}
                 checked={showMistakes()}
+                oninput={() => setShowMistakes(sm => !sm)}
               />
             </label>
           </div>

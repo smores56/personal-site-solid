@@ -7,7 +7,7 @@ export default function IngredientListItem(props: { ingredient: z.infer<typeof I
     <li>
       {props.ingredient.item}
       <Show when={props.ingredient.quantity} keyed>
-        {quantity => `- ${quantity}`}
+        {quantity => ` - ${quantity}`}
       </Show>
       <Show when={props.ingredient.optional}>
         <i> (optional) </i>

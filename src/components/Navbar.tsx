@@ -9,8 +9,8 @@ export default function Navbar() {
 
   const links: [string, string][] = [
     ["Keyboards", "/keyboards"],
-    ["Sudoku", "/sudoku"],
-    ["Recipes", "/recipes"]
+    ["Recipes", "/recipes"],
+    ["Sudoku", "/sudoku"]
   ];
 
   // Close burger on navigation

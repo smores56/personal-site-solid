@@ -25,7 +25,7 @@ export default function Home() {
 
             <div class="btn-group btn-group-vertical">
               <ExternalLink
-                class="btn btn-primary"
+                class="btn btn-info"
                 href="https://linkedin.com/in/samuel-mohr"
               >
                 Check out my LinkedIn
