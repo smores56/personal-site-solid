@@ -2,7 +2,7 @@ import { For } from "solid-js";
 import { Title } from "solid-start";
 
 import KeyboardCard from "~/components/keyboards/KeyboardCard";
-import { ALL_KEYBOARDS, CLOG_V2_README_URL, EMAIL } from "~/data";
+import { ALL_KEYBOARDS, CLOG_V2_README_URL, DISCORD_NAME, EMAIL } from "~/data";
 
 import EmailIcon from "~/components/icons/EmailIcon";
 import ExternalLink from "~/components/ExternalLink";
@@ -60,7 +60,7 @@ export default function Home() {
 
             <div class="btn-group">
               <ExternalLink class="btn btn-primary" href="https://discord.com/users/139936115393036289">
-                <span class="mr-2 normal-case"> S'mores#6844</span>
+                <span class="mr-2 normal-case">{DISCORD_NAME}</span>
                 <img width="16" src={discordIconUrl} />
               </ExternalLink>
               <ExternalLink class="btn btn-secondary" href={`mailto:${EMAIL}`}>

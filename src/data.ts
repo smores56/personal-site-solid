@@ -10,7 +10,8 @@ import { Keyboard } from "./models";
 
 export const PAGE_SIZE = 20;
 export const EMAIL = "sam@sammohr.dev";
-export const RECIPES_DIR = "/home/smores/pCloudDrive/recipes";
+export const DISCORD_NAME = "smores56";
+export const RECIPES_DIR = "/pCloudDrive/recipes";
 export const CLOG_V2_README_URL = "https://github.com/smores56/clog-v2";
 
 export const ALL_KEYBOARDS: Keyboard[] = [
